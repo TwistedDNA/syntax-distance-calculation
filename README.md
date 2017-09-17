@@ -1,4 +1,4 @@
-# describtion
+# description
 
 This project is a solution to a challenge from
  
