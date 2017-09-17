@@ -1,3 +1,6 @@
+package net.twisteddna;
+
+import net.twisteddna.Heuristic;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -10,42 +13,35 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(MockitoJUnitRunner.class)
 public class HeuristicTest {
-
-    private Heuristic heuristic;
-
-    @Before
-    public void init(){
-        heuristic = new Heuristic();
-    }
     @Test
     public void shouldCountDifferentLettersInSameLengthWord(){
-        assertEquals(1, heuristic.calculate("pigeon","pigean"));
+        assertEquals(1, Heuristic.calculate("pigeon","pigean"));
     }
     @Test
     public void shouldCountWordLengthTowardsSyntaxDifference(){
-        assertEquals(2, heuristic.calculate("pagan","paganse"));
+        assertEquals(2, Heuristic.calculate("pagan","paganse"));
     }
     @Test
     public void shouldNotQualifyForNeighbour(){
-        assertFalse(heuristic.isNeighbour("Europe","Euro"));
+        assertFalse(Heuristic.isNeighbour("Europe","Euro"));
     }
     @Test
     public void shouldQualifyForNeighbour(){
-        assertTrue(heuristic.isNeighbour("Joy","Joe"));
+        assertTrue(Heuristic.isNeighbour("Joy","Joe"));
     }
     @Test
     public void shouldProperlyCalculateEndings(){
-        assertEquals(1, heuristic.calculate("pane","panes"));
+        assertEquals(1, Heuristic.calculate("pane","panes"));
     }
     @Test
     @Ignore //TODO stretch goal
     public void shouldProperlyCalculateAdditionalLettersInTheMiddleOfWord(){
-        assertEquals(1, heuristic.calculate("shave","shaove"));
+        assertEquals(1, Heuristic.calculate("shave","shaove"));
     }
     @Test
     @Ignore //TODO stretch goal
     public void shouldProperlyCalculatePrefixes(){
-        assertEquals(1, heuristic.calculate("apane","pane"));
+        assertEquals(1, Heuristic.calculate("apane","pane"));
     }
 
 }
