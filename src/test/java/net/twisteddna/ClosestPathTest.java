@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.io.IOException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -12,7 +13,7 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(MockitoJUnitRunner.class)
 public class ClosestPathTest {
     @Test
-    public void shouldReturnClosestPath(){
+    public void shouldReturnClosestPath() throws IOException {
         ClosestPath path = new ClosestPath();
 
         List<String> trail = path.findTrail("lead","gold");

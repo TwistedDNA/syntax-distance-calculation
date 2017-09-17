@@ -1,7 +1,5 @@
 package net.twisteddna;
 
-import net.twisteddna.Heuristic;
-import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,11 +13,11 @@ import static org.junit.Assert.assertTrue;
 public class HeuristicTest {
     @Test
     public void shouldCountDifferentLettersInSameLengthWord(){
-        assertEquals(1, Heuristic.calculate("pigeon","pigean"));
+        assertEquals(1, Heuristic.distanceBetween("pigeon","pigean"));
     }
     @Test
     public void shouldCountWordLengthTowardsSyntaxDifference(){
-        assertEquals(2, Heuristic.calculate("pagan","paganse"));
+        assertEquals(2, Heuristic.distanceBetween("pagan","paganse"));
     }
     @Test
     public void shouldNotQualifyForNeighbour(){
@@ -31,17 +29,17 @@ public class HeuristicTest {
     }
     @Test
     public void shouldProperlyCalculateEndings(){
-        assertEquals(1, Heuristic.calculate("pane","panes"));
+        assertEquals(1, Heuristic.distanceBetween("pane","panes"));
     }
     @Test
     @Ignore //TODO stretch goal
     public void shouldProperlyCalculateAdditionalLettersInTheMiddleOfWord(){
-        assertEquals(1, Heuristic.calculate("shave","shaove"));
+        assertEquals(1, Heuristic.distanceBetween("shave","shaove"));
     }
     @Test
     @Ignore //TODO stretch goal
     public void shouldProperlyCalculatePrefixes(){
-        assertEquals(1, Heuristic.calculate("apane","pane"));
+        assertEquals(1, Heuristic.distanceBetween("apane","pane"));
     }
 
 }

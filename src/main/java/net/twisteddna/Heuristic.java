@@ -2,7 +2,7 @@ package net.twisteddna;
 
 public class Heuristic {
 
-    public static int calculate(String alfa, String omega) {
+    public static int distanceBetween(String alfa, String omega) {
         char[] first = alfa.toCharArray();
         char[] second = omega.toCharArray();
         int diff = Math.abs(first.length-second.length);
