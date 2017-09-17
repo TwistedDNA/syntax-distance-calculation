@@ -32,12 +32,12 @@ public class HeuristicTest {
         assertEquals(1, Heuristic.distanceBetween("pane","panes"));
     }
     @Test
-    @Ignore //TODO stretch goal
+    @Ignore //stretch goal
     public void shouldProperlyCalculateAdditionalLettersInTheMiddleOfWord(){
         assertEquals(1, Heuristic.distanceBetween("shave","shaove"));
     }
     @Test
-    @Ignore //TODO stretch goal
+    @Ignore //stretch goal
     public void shouldProperlyCalculatePrefixes(){
         assertEquals(1, Heuristic.distanceBetween("apane","pane"));
     }
