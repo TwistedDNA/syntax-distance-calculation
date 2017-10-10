@@ -46,7 +46,7 @@ public class ClosestPath {
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
         String line;
         while ((line = reader.readLine()) != null) {
-            if (Heuristic.isNeighbour(node, line)) {
+            if (SyntaxEvaluationUtils.isNeighbour(node, line)) {
                 set.add(line);
             }
         }

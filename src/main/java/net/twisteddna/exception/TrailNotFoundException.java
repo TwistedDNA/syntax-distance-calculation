@@ -5,7 +5,7 @@ package net.twisteddna.exception;
  */
 public class TrailNotFoundException extends Exception {
 
-    TrailNotFoundException(String reason) {
+    public TrailNotFoundException(String reason) {
         super(reason);
     }
 }

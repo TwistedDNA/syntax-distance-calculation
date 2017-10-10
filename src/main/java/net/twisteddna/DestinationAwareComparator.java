@@ -11,7 +11,8 @@ public class DestinationAwareComparator implements Comparator<String> {
 
     @Override
     public int compare(String o1, String o2) {
-        return Heuristic.distanceBetween(o1, destination) - Heuristic.distanceBetween(o2, destination);
+        return SyntaxEvaluationUtils.distanceBetween(o1, destination) - SyntaxEvaluationUtils
+            .distanceBetween(o2, destination);
     }
 
 }

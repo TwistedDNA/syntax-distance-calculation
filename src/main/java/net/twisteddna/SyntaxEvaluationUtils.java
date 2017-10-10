@@ -1,6 +1,6 @@
 package net.twisteddna;
 
-public class Heuristic {
+public class SyntaxEvaluationUtils {
 
     public static int distanceBetween(String alfa, String omega) {
         char[] first = alfa.toCharArray();
