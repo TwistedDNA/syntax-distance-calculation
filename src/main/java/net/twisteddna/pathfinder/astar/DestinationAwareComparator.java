@@ -24,5 +24,4 @@ public class DestinationAwareComparator implements Comparator<Node> {
                 return o1.hashCode()-o2.hashCode();
             }
     }
-
 }

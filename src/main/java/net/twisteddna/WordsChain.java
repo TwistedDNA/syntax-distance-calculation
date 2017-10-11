@@ -3,7 +3,6 @@ package net.twisteddna;
 import net.twisteddna.exception.TrailNotFoundException;
 import net.twisteddna.pathfinder.Pathfinder;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,7 +10,7 @@ import java.util.List;
  */
 public class WordsChain {
 
-    private List<String> trail = new ArrayList<>();
+    private List<String> trail = null;
     private ValidatedArguments args;
     private String errorMessage;
 

@@ -16,6 +16,7 @@ public class Node {
 
     @Override
     public boolean equals(Object o) {
+        //comparing values only
         if (this == o) {
             return true;
         }
