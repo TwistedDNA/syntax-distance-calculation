@@ -1,4 +1,4 @@
-package net.twisteddna;
+package net.twisteddna.heuristics;
 
 public class SyntaxEvaluationUtils {
 

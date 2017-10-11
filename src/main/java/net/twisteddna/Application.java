@@ -1,5 +1,6 @@
 package net.twisteddna;
 
+import net.twisteddna.pathfinder.astar.AStar;
 import net.twisteddna.vocabulary.BufferedVocabulary;
 
 import java.io.IOException;

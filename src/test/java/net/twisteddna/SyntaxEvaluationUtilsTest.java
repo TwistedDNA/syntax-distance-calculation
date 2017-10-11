@@ -1,6 +1,6 @@
 package net.twisteddna;
 
-import org.junit.Ignore;
+import net.twisteddna.heuristics.SyntaxEvaluationUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
@@ -31,15 +31,6 @@ public class SyntaxEvaluationUtilsTest {
     public void shouldProperlyCalculateEndings(){
         assertEquals(1, SyntaxEvaluationUtils.distanceBetween("pane", "panes"));
     }
-    @Test
-    @Ignore //stretch goal
-    public void shouldProperlyCalculateAdditionalLettersInTheMiddleOfWord(){
-        assertEquals(1, SyntaxEvaluationUtils.distanceBetween("shave", "shaove"));
-    }
-    @Test
-    @Ignore //stretch goal
-    public void shouldProperlyCalculatePrefixes(){
-        assertEquals(1, SyntaxEvaluationUtils.distanceBetween("apane", "pane"));
-    }
+
 
 }
