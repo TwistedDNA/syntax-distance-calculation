@@ -2,6 +2,8 @@ package net.twisteddna;
 
 import net.twisteddna.pathfinder.astar.AStar;
 import net.twisteddna.vocabulary.BufferedVocabulary;
+import net.twisteddna.wordchain.ValidatedArguments;
+import net.twisteddna.wordchain.WordsChain;
 
 import java.io.IOException;
 

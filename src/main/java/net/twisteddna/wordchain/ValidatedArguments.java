@@ -1,4 +1,4 @@
-package net.twisteddna;
+package net.twisteddna.wordchain;
 
 /**
  * Crafted by TwistedDNA on 10/9/2017.

@@ -3,7 +3,7 @@ package net.twisteddna.pathfinder.astar;
 /**
  * Crafted by TwistedDNA on 10/11/2017.
  */
-public class Node {
+class Node {
     public String value;
     public boolean visited;
     public Node origin;

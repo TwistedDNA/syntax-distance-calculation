@@ -2,9 +2,10 @@ package net.twisteddna.pathfinder.astar;
 
 import net.twisteddna.heuristics.SyntaxEvaluationUtils;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
-public class DestinationAwareComparator implements Comparator<Node> {
+class DestinationAwareComparator implements Comparator<Node>, Serializable {
     private String destination;
 
     public DestinationAwareComparator(String destination) {

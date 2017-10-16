@@ -7,7 +7,7 @@ import java.util.TreeSet;
 /**
  * Crafted by TwistedDNA on 10/10/2017.
  */
-public class AddNeighboursOperation {
+class AddNeighboursOperation {
     private Node currentNode;
     private TreeSet<Node> neighbours;
 

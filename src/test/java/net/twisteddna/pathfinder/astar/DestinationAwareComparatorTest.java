@@ -15,7 +15,7 @@ import java.util.TreeSet;
 @RunWith(MockitoJUnitRunner.class)
 public class DestinationAwareComparatorTest {
 
-    private final String destination = "Jabba";
+    private  String destination = "Jabba";
     private TreeSet<Node> set = new TreeSet(new DestinationAwareComparator(destination));
 
 

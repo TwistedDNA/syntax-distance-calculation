@@ -1,4 +1,4 @@
-package net.twisteddna;
+package net.twisteddna.wordchain;
 
 import net.twisteddna.exception.TrailNotFoundException;
 import net.twisteddna.pathfinder.Pathfinder;
@@ -29,7 +29,7 @@ public class WordsChain {
     }
 
     private String stringifyChain() {
-        return errorMessage.isEmpty() ? trail.stream().reduce((a, b) -> a + "," + b).get() : errorMessage;
+        return errorMessage.isEmpty() ? trail.stream().reduce("",(a, b) -> a + "," + b) : errorMessage;
     }
 
 }
