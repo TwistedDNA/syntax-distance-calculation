@@ -10,15 +10,17 @@ import java.util.TreeSet;
 class AddNeighboursOperation {
     private Node currentNode;
     private TreeSet<Node> neighbours;
+    private SyntaxEvaluationUtils heuristics;
 
-    public AddNeighboursOperation(Node currentNode, TreeSet<Node> set) {
+    public AddNeighboursOperation(SyntaxEvaluationUtils heuristics, Node currentNode, TreeSet<Node> set) {
         this.currentNode = currentNode;
         this.neighbours = set;
+        this.heuristics = heuristics;
         currentNode.visited = true;
     }
 
     public void addIfNeighbour(String potentialNeighbour){
-        if (SyntaxEvaluationUtils.isNeighbour(currentNode.value, potentialNeighbour)) {
+        if (heuristics.isNeighbour(currentNode.value, potentialNeighbour)) {
             neighbours.add(new Node(potentialNeighbour,currentNode));
         }
     }

@@ -7,14 +7,16 @@ import java.util.Comparator;
 
 class DestinationAwareComparator implements Comparator<Node>, Serializable {
     private String destination;
+    private SyntaxEvaluationUtils heuristics;
 
-    public DestinationAwareComparator(String destination) {
+    public DestinationAwareComparator(String destination, SyntaxEvaluationUtils heuristics) {
         this.destination = destination;
+        this.heuristics = heuristics;
     }
 
     @Override
     public int compare(Node o1, Node o2) {
-            int dif = SyntaxEvaluationUtils.distanceBetween(o1.value, destination) - SyntaxEvaluationUtils
+            int dif = heuristics.distanceBetween(o1.value, destination) - heuristics
             .distanceBetween(o2.value, destination);
             if(dif != 0){
                 return dif;

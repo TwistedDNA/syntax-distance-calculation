@@ -2,7 +2,7 @@ package net.twisteddna.heuristics;
 
 public class SyntaxEvaluationUtils {
 
-    public static int distanceBetween(String alfa, String omega) {
+    public int distanceBetween(String alfa, String omega) {
         char[] first = alfa.toCharArray();
         char[] second = omega.toCharArray();
         int diff = Math.abs(first.length-second.length);
@@ -14,7 +14,7 @@ public class SyntaxEvaluationUtils {
         return diff;
     }
 
-    public static boolean isNeighbour(String target, String potentialNeighbour){
+    public boolean isNeighbour(String target, String potentialNeighbour){
         char[] first = target.toCharArray();
         char[] second = potentialNeighbour.toCharArray();
         int diff = Math.abs(first.length-second.length);

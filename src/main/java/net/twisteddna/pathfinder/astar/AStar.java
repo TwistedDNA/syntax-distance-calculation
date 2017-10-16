@@ -1,6 +1,7 @@
 package net.twisteddna.pathfinder.astar;
 
 import net.twisteddna.exception.TrailNotFoundException;
+import net.twisteddna.heuristics.SyntaxEvaluationUtils;
 import net.twisteddna.pathfinder.Pathfinder;
 import net.twisteddna.vocabulary.Vocabulary;
 
@@ -15,15 +16,17 @@ public class AStar implements Pathfinder {
 
     private Vocabulary vocabulary;
     private TreeSet<Node> words;
+    private SyntaxEvaluationUtils heuristics;
 
-    public AStar(Vocabulary vocabulary) {
+    public AStar(Vocabulary vocabulary, SyntaxEvaluationUtils heuristics) {
         this.vocabulary = vocabulary;
+        this.heuristics = heuristics;
     }
 
 
     @Override
     public List<String> findTrail(String startingWord, String destinationWord) throws TrailNotFoundException {
-        words = new TreeSet<>(new DestinationAwareComparator(destinationWord));
+        words = new TreeSet<>(new DestinationAwareComparator(destinationWord, heuristics));
         words.add(new Node(startingWord,null));
 
         while (true) {
@@ -51,7 +54,7 @@ public class AStar implements Pathfinder {
     }
 
     private void addNeighbours(Node currentNode) {
-        AddNeighboursOperation op = new AddNeighboursOperation(currentNode, words);
+        AddNeighboursOperation op = new AddNeighboursOperation(heuristics,currentNode, words);
         vocabulary.forEveryWord(op::addIfNeighbour);
     }
 

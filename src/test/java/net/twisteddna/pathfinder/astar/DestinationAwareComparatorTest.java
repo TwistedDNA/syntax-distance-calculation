@@ -2,6 +2,7 @@ package net.twisteddna.pathfinder.astar;
 
 import static org.junit.Assert.assertEquals;
 
+import net.twisteddna.heuristics.SyntaxEvaluationUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +17,7 @@ import java.util.TreeSet;
 public class DestinationAwareComparatorTest {
 
     private  String destination = "Jabba";
-    private TreeSet<Node> set = new TreeSet(new DestinationAwareComparator(destination));
+    private TreeSet<Node> set = new TreeSet(new DestinationAwareComparator(destination,new SyntaxEvaluationUtils()));
 
 
     @Before
