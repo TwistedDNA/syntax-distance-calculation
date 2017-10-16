@@ -15,6 +15,9 @@ public class WordsChain {
     private String errorMessage;
 
     public WordsChain(ValidatedArguments args) {
+        if (args == null){
+            throw new IllegalArgumentException("Parameters cannot be null");
+        }
         this.args = args;
     }
 
@@ -29,7 +32,7 @@ public class WordsChain {
     }
 
     private String stringifyChain() {
-        return errorMessage.isEmpty() ? trail.stream().reduce("",(a, b) -> a + "," + b) : errorMessage;
+        return errorMessage.isEmpty() ? String.join(",",trail) : errorMessage;
     }
 
 }
