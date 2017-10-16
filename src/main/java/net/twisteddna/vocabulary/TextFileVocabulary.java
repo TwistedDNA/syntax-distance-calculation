@@ -10,15 +10,16 @@ import java.util.function.Consumer;
 /**
  * Crafted by TwistedDNA on 10/10/2017.
  */
-public class BufferedVocabulary implements Vocabulary{
+public class TextFileVocabulary implements Vocabulary{
     private static final String DEFAULT_VOCABULARY = "wordlist.txt";
-    private String vocabularyFilename="non-existing-resource";
+    private String vocabularyFilename;
 
-    public BufferedVocabulary(String vocabularyFilename) {
+    public TextFileVocabulary(String vocabularyFilename) {
         this.vocabularyFilename = vocabularyFilename;
     }
 
-    public BufferedVocabulary() {
+    public TextFileVocabulary() {
+        vocabularyFilename="non-existing-resource";
     }
 
     @Override

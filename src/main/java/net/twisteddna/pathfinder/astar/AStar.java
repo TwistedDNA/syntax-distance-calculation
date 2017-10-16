@@ -5,6 +5,7 @@ import net.twisteddna.heuristics.SyntaxEvaluationUtils;
 import net.twisteddna.pathfinder.Pathfinder;
 import net.twisteddna.vocabulary.Vocabulary;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeSet;
@@ -44,9 +45,11 @@ public class AStar implements Pathfinder {
     private Node firstUnvisited() throws TrailNotFoundException {
         return words.stream().filter(node -> !node.visited).findFirst().orElseThrow(()->new TrailNotFoundException("Transformation cannot be found."));
     }
+
     private void extractTrail(Node node, List<String> listToFill){
         listToFill.add(node.value);
         if(node.origin == null) {
+            Collections.reverse(listToFill);
             return;
         }else{
             extractTrail(node.origin,listToFill);

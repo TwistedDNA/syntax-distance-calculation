@@ -15,6 +15,9 @@ public class ValidatedArguments {
     }
 
     private void validate(String[] args) {
+        if(args == null){
+            throw new IllegalArgumentException("Arguments array should contain two parameters, but was null instead.");
+        }
         if (args.length < 2) {
             throw new IllegalArgumentException("Two arguments needed. First is starting word, and second is destination word.");
         }
