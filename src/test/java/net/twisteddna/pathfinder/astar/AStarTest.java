@@ -62,6 +62,6 @@ class InMemoryVocabulary implements Vocabulary {
 
     @Override
     public void forEveryWord(Consumer<String> func) {
-        words.forEach(w -> func.accept(w));
+        words.forEach(func);
     }
 }

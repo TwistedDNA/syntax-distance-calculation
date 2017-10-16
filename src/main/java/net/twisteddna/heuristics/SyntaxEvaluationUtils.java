@@ -1,6 +1,8 @@
 package net.twisteddna.heuristics;
 
-public class SyntaxEvaluationUtils {
+import java.io.Serializable;
+
+public class SyntaxEvaluationUtils implements Serializable{
 
     public int distanceBetween(String alfa, String omega) {
         char[] first = alfa.toCharArray();

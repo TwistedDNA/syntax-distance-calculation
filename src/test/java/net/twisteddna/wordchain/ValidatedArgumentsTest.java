@@ -1,7 +1,5 @@
 package net.twisteddna.wordchain;
 
-import static org.junit.Assert.*;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -13,27 +11,30 @@ import org.mockito.runners.MockitoJUnitRunner;
  */
 @RunWith(MockitoJUnitRunner.class)
 public class ValidatedArgumentsTest {
+
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void shouldThrowExceptionOnNullArgument(){
+    public void shouldThrowExceptionOnNullArgument() {
         thrown.expect(IllegalArgumentException.class);
         new ValidatedArguments(null);
     }
 
     @Test
-    public void shouldThrowExceptionOnEmptyArgument(){
+    public void shouldThrowExceptionOnEmptyArgument() {
         thrown.expect(IllegalArgumentException.class);
         new ValidatedArguments(new String[]{});
     }
+
     @Test
-    public void shouldThrowExceptionOnOneArgumentOnly(){
+    public void shouldThrowExceptionOnOneArgumentOnly() {
         thrown.expect(IllegalArgumentException.class);
         new ValidatedArguments(new String[]{"withoutSecondOne"});
     }
+
     @Test
-    public void shouldProperlyCreateOnAtLeastTwoArguments(){
-        assertNotNull(new ValidatedArguments(new String[]{"firstOne","secondOne"}));
+    public void shouldProperlyCreateOnAtLeastTwoArguments() {
+        new ValidatedArguments(new String[]{"firstOne", "secondOne"});
     }
 }

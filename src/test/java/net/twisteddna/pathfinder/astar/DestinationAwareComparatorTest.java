@@ -17,7 +17,7 @@ import java.util.TreeSet;
 public class DestinationAwareComparatorTest {
 
     private  String destination = "Jabba";
-    private TreeSet<Node> set = new TreeSet(new DestinationAwareComparator(destination,new SyntaxEvaluationUtils()));
+    private TreeSet<Node> set = new TreeSet<>(new DestinationAwareComparator(destination,new SyntaxEvaluationUtils()));
 
 
     @Before

@@ -50,7 +50,6 @@ public class AStar implements Pathfinder {
         listToFill.add(node.value);
         if(node.origin == null) {
             Collections.reverse(listToFill);
-            return;
         }else{
             extractTrail(node.origin,listToFill);
         }

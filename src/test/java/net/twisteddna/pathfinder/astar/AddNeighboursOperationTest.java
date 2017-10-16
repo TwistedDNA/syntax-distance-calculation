@@ -25,7 +25,7 @@ public class AddNeighboursOperationTest {
         when(heuristicsMock.isNeighbour(any(), any())).thenReturn(true);
         when(heuristicsMock.distanceBetween(any(), any())).thenCallRealMethod();
         Node starting = new Node("someVal", null);
-        TreeSet set = new TreeSet(new DestinationAwareComparator("some", heuristicsMock));
+        TreeSet<Node> set = new TreeSet<>(new DestinationAwareComparator("some", heuristicsMock));
 
         AddNeighboursOperation op = new AddNeighboursOperation(heuristicsMock, starting, set);
 
